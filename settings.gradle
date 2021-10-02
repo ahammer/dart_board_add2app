@@ -1,11 +1,3 @@
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-    }
-}
 rootProject.name = "Add 2 app"
 include ':app'
 setBinding(new Binding([gradle: this]))                                // new

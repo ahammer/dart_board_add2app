@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import io.dartboard.add2app.ui.theme.Add2AppTheme
-
+//import io.dartboard.dart_board_core_plugin.DartBoardNav
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 fun RouteButton(route: String) {
     val context = LocalContext.current
     Button(onClick = {
-
+        //DartBoardNav.launchRoute(route)
     }) {
         Text(text = "$route")
     }
