@@ -1,5 +1,5 @@
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
         google()
         mavenCentral()
@@ -8,3 +8,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Add 2 app"
 include ':app'
+setBinding(new Binding([gradle: this]))                                // new
+evaluate(new File(                                                     // new
+        settingsDir,                                              // new
+        'flutter_module/.android/include_flutter.groovy'                         // new
+))
