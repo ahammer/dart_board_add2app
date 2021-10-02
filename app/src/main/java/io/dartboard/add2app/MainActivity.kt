@@ -3,10 +3,13 @@ package io.dartboard.add2app
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import io.dartboard.add2app.ui.theme.Add2AppTheme
 
@@ -15,9 +18,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Add2AppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                Column() {
+                    RouteButton("/minesweep")
+                    RouteButton("/launches")
                 }
             }
         }
@@ -25,14 +28,22 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun RouteButton(route: String) {
+    val context = LocalContext.current
+    Button(onClick = {
+
+    }) {
+        Text(text = "$route")
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     Add2AppTheme {
-        Greeting("Android")
+        Column() {
+            RouteButton("/minesweep")
+            RouteButton("/launches")
+        }
     }
 }
