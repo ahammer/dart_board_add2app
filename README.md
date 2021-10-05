@@ -61,6 +61,8 @@ For add2app, the initialPath does not matter, as you request an path when you la
 
 However, at this point you can run the module directly to test it (e.g. verify the routes work).
 
+The `Add2AppFeature()` is critica for this to work. It provides the bindings for Navigation within DartBoard. 
+
 4) Add flutter to your main Android Project.
 
 Recommended Approach: https://flutter.dev/docs/development/add-to-app/android/project-setup#option-b---depend-on-the-modules-source-code
@@ -101,6 +103,11 @@ You specify pigeons as classes/methods that the Host or Flutter can call to sync
 
 For Pigeon's you can bind the Flutter side in a AppDecoration/LifecycleWidget. See the `dart_board_spacex_plugin` for an example.
 
+## Features as Plugins
+
+If you are using Pigeon's, you'll need to also be using Plugin typed projects. This allows you to bundle android and iOS code within your feature.
+
+Dart Board transparently works with plugin feature types and will automatically include the Android/iOS bindings as well as registering your plugin.
 
 ## iOS Support
 
